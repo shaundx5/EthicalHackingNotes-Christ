@@ -3,23 +3,16 @@
 **Total Forks:** 86
 **Report Generated:** 2025-07-21 11:26:15 IST
 
-## Summary Statistics
-
-| Status | Count | Percentage |
-|--------|-------|------------|
-| PASS   | 7     | 8.1%       |
-| FAIL   | 79    | 91.9%      |
-| **Total** | **86** | **100%** |
-
 ## Data Files
 - **CSV Format**: `fork-users.csv` - Machine readable format
 - **Markdown Format**: `fork-users.md` - Human readable table format with clickable links
 
 ## Data Structure
-- **Profile Name**: User's display name or GitHub username
-- **Username**: GitHub profile link (clickable in markdown format)
-- **Repo Count**: Total number of public repositories
-- **EthicalHackingNotes-Christ Check**: PASS if user has this specific repo, FAIL if not
+- **Profile Name**: User's display name or username
+- **Username**: GitHub profile link (clickable in markdown)
+- **Repo Count**: Number of public repositories
+- **EthicalHackingNotes-Christ Check**: ✓ if repo exists, ✗ if not
+- **Last Update**: Individual user's last activity across all repositories
 
 ## Sorting Order
 Users are sorted chronologically by fork creation date:

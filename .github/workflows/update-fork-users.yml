@@ -65,9 +65,10 @@ jobs:
 
                 const profileName = fork.owner.name || fork.owner.login;
                 const username = fork.owner.login;
+                const usernameWithLink = `https://github.com/${username}`;
                 const ethicalHackingCheck = hasEthicalHackingRepo ? '✓' : '✗';
 
-                csvRows.push(`"${profileName}","${username}",${repoCount},"${ethicalHackingCheck}","${lastUpdate}"`);
+                csvRows.push(`"${profileName}","${usernameWithLink}",${repoCount},"${ethicalHackingCheck}","${lastUpdate}"`);
                 
                 // Add a small delay to avoid hitting rate limits
                 await new Promise(resolve => setTimeout(resolve, 100));
@@ -77,7 +78,8 @@ jobs:
                 // Add entry with error indicator
                 const profileName = fork.owner.name || fork.owner.login;
                 const username = fork.owner.login;
-                csvRows.push(`"${profileName}","${username}","Error","Error","${lastUpdate}"`);
+                const usernameWithLink = `https://github.com/${username}`;
+                csvRows.push(`"${profileName}","${usernameWithLink}","Error","Error","${lastUpdate}"`);
               }
             }
 

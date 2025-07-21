@@ -44,11 +44,11 @@ jobs:
 
             console.log(`Found ${allForks.length} forks`);
 
-            // Sort forks by creation date (oldest first)
+            // Sort forks by creation date (oldest first - first fork to last fork)
             allForks.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
 
-            const csvRows = ['Profile Name,Username,Repo Count,EthicalHackingNotes-Christ Check,Last Update'];
-            const mdRows = ['| Profile Name | Username | Repo Count | EthicalHackingNotes-Christ Check | Last Update |', '|---|---|---|---|---|'];
+            const csvRows = ['Profile Name,Username,Repo Count,EthicalHackingNotes-Christ Check'];
+            const mdRows = ['| Profile Name | Username | Repo Count | EthicalHackingNotes-Christ Check |', '|---|---|---|---|'];
 
             for (const fork of allForks) {
               try {
@@ -67,24 +67,13 @@ jobs:
                   repo.name === 'EthicalHackingNotes-Christ'
                 );
 
-                // Get user's last activity (last push to any repo)
-                const lastActivity = userRepos.length > 0 ? 
-                  userRepos.reduce((latest, repo) => {
-                    const repoUpdate = new Date(repo.updated_at);
-                    return repoUpdate > latest ? repoUpdate : latest;
-                  }, new Date(0)) : new Date(0);
-                
-                const userLastUpdate = lastActivity.getTime() > 0 ? 
-                  new Date(lastActivity.getTime() + istOffset).toISOString().replace('T', ' ').substring(0, 19) + ' IST' : 
-                  'No activity';
-
                 const profileName = fork.owner.name || fork.owner.login;
                 const username = fork.owner.login;
                 const usernameWithLink = `https://github.com/${username}`;
                 const ethicalHackingCheck = hasEthicalHackingRepo ? '✓' : '✗';
 
-                csvRows.push(`"${profileName}","${usernameWithLink}",${repoCount},"${ethicalHackingCheck}","${userLastUpdate}"`);
-                mdRows.push(`| ${profileName} | [${username}](${usernameWithLink}) | ${repoCount} | ${ethicalHackingCheck} | ${userLastUpdate} |`);
+                csvRows.push(`"${profileName}","${usernameWithLink}",${repoCount},"${ethicalHackingCheck}"`);
+                mdRows.push(`| ${profileName} | [${username}](${usernameWithLink}) | ${repoCount} | ${ethicalHackingCheck} |`);
                 
                 // Add a small delay to avoid hitting rate limits
                 await new Promise(resolve => setTimeout(resolve, 100));
@@ -95,8 +84,8 @@ jobs:
                 const profileName = fork.owner.name || fork.owner.login;
                 const username = fork.owner.login;
                 const usernameWithLink = `https://github.com/${username}`;
-                csvRows.push(`"${profileName}","${usernameWithLink}","Error","Error","Error"`);
-                mdRows.push(`| ${profileName} | [${username}](${usernameWithLink}) | Error | Error | Error |`);
+                csvRows.push(`"${profileName}","${usernameWithLink}","Error","Error"`);
+                mdRows.push(`| ${profileName} | [${username}](${usernameWithLink}) | Error | Error |`);
               }
             }
 
@@ -113,29 +102,32 @@ jobs:
 
             // Also create a summary markdown file
             const summaryContent = [
-              '# Fork Users Summary',
+              '# Fork Users Data',
               '',
               `**Total Forks:** ${allForks.length}`,
               `**Report Generated:** ${lastUpdate}`,
               '',
               '## Data Files',
-              '- **CSV Format**: `.repo/fork-users.csv` - Machine readable format',
-              '- **Markdown Format**: `.repo/fork-users.md` - Human readable table format',
+              '- **CSV Format**: `fork-users.csv` - Machine readable format',
+              '- **Markdown Format**: `fork-users.md` - Human readable table format with clickable links',
               '',
               '## Data Structure',
-              '- **Profile Name**: User\'s display name or username',
-              '- **Username**: GitHub profile link (clickable in markdown)',
-              '- **Repo Count**: Number of public repositories',
-              '- **EthicalHackingNotes-Christ Check**: ✓ if repo exists, ✗ if not',
-              '- **Last Update**: Individual user\'s last activity across all repositories',
+              '- **Profile Name**: User\'s display name or GitHub username',
+              '- **Username**: GitHub profile link (clickable in markdown format)',
+              '- **Repo Count**: Total number of public repositories',
+              '- **EthicalHackingNotes-Christ Check**: ✓ if user has this specific repo, ✗ if not',
               '',
-              '## Sorting',
-              'Users are sorted by fork creation date (first fork to latest fork)',
+              '## Sorting Order',
+              'Users are sorted chronologically by fork creation date:',
+              '- **First user to fork** appears at the top',
+              '- **Last user to fork** appears at the bottom',
               '',
-              '## Notes',
-              '- Users are sorted chronologically by when they forked the repository',
-              '- Last Update tracks each user\'s most recent activity, not the report generation time',
-              '- EthicalHackingNotes-Christ repo check helps identify users who have the specific repository'
+              '## Usage',
+              '- Use the **CSV file** for data analysis, spreadsheet imports, or automated processing',
+              '- Use the **Markdown file** for easy browsing with clickable GitHub profile links',
+              '',
+              '## Repository Check',
+              'The `EthicalHackingNotes-Christ` column helps identify users who have created or forked the specific repository of interest.'
             ].join('\n');
 
             fs.writeFileSync('.repo/README.md', summaryContent);

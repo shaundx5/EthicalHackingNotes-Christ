@@ -1,5 +1,5 @@
-| Profile Name | Username | Repo Count | EthicalHackingNotes-Christ Check | Last Update |
-|---|---|---|---|---|
+| Profile Name | Username | Repo Count | EthicalHackingNotes-Christ Check |
+|---|---|---|---|
 | RAAPPO | [RAAPPO](https://github.com/RAAPPO) | 5 | ✗ | 2025-07-15 15:28:12 IST |
 | BarathCG | [BarathCG](https://github.com/BarathCG) | 2 | ✗ | 2025-07-21 11:21:18 IST |
 | Ebinesh-03 | [Ebinesh-03](https://github.com/Ebinesh-03) | 2 | ✗ | 2025-07-15 15:31:46 IST |

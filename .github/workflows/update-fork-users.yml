@@ -60,7 +60,7 @@ jobs:
                 
                 // Check if user has EthicalHacking-CHRIST repo
                 const hasEthicalHackingRepo = userRepos.some(repo => 
-                  repo.name === 'EthicalHacking-CHRIST'
+                  repo.name === 'EthicalHacking-Christ'
                 );
 
                 const profileName = fork.owner.name || fork.owner.login;

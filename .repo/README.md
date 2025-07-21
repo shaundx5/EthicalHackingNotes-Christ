@@ -1,23 +1,34 @@
-# Fork Users Summary
+# Fork Users Data
 
 **Total Forks:** 86
 **Report Generated:** 2025-07-21 11:26:15 IST
 
+## Summary Statistics
+
+| Status | Count | Percentage |
+|--------|-------|------------|
+| PASS   | 7     | 8.1%       |
+| FAIL   | 79    | 91.9%      |
+| **Total** | **86** | **100%** |
+
 ## Data Files
-- **CSV Format**: `.repo/fork-users.csv` - Machine readable format
-- **Markdown Format**: `.repo/fork-users.md` - Human readable table format
+- **CSV Format**: `fork-users.csv` - Machine readable format
+- **Markdown Format**: `fork-users.md` - Human readable table format with clickable links
 
 ## Data Structure
-- **Profile Name**: User's display name or username
-- **Username**: GitHub profile link (clickable in markdown)
-- **Repo Count**: Number of public repositories
-- **EthicalHackingNotes-Christ Check**: ✓ if repo exists, ✗ if not
-- **Last Update**: Individual user's last activity across all repositories
+- **Profile Name**: User's display name or GitHub username
+- **Username**: GitHub profile link (clickable in markdown format)
+- **Repo Count**: Total number of public repositories
+- **EthicalHackingNotes-Christ Check**: PASS if user has this specific repo, FAIL if not
 
-## Sorting
-Users are sorted by fork creation date (first fork to latest fork)
+## Sorting Order
+Users are sorted chronologically by fork creation date:
+- **First user to fork** appears at the top
+- **Last user to fork** appears at the bottom
 
-## Notes
-- Users are sorted chronologically by when they forked the repository
-- Last Update tracks each user's most recent activity, not the report generation time
-- EthicalHackingNotes-Christ repo check helps identify users who have the specific repository
+## Usage
+- Use the **CSV file** for data analysis, spreadsheet imports, or automated processing
+- Use the **Markdown file** for easy browsing with clickable GitHub profile links
+
+## Repository Check
+The `EthicalHackingNotes-Christ` column helps identify users who have created or forked the specific repository of interest.

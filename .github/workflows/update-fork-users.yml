@@ -70,7 +70,7 @@ jobs:
                 const profileName = fork.owner.name || fork.owner.login;
                 const username = fork.owner.login;
                 const usernameWithLink = `https://github.com/${username}`;
-                const ethicalHackingCheck = hasEthicalHackingRepo ? '✓' : '✗';
+                const ethicalHackingCheck = hasEthicalHackingRepo ? 'PASS' : 'FAIL';
 
                 csvRows.push(`"${profileName}","${usernameWithLink}",${repoCount},"${ethicalHackingCheck}"`);
                 mdRows.push(`| ${profileName} | [${username}](${usernameWithLink}) | ${repoCount} | ${ethicalHackingCheck} |`);
@@ -100,12 +100,31 @@ jobs:
             fs.writeFileSync('.repo/fork-users.csv', csvContent);
             fs.writeFileSync('.repo/fork-users.md', mdContent);
 
+            // Calculate PASS/FAIL statistics
+            const passCount = csvRows.slice(1).filter(row => row.includes('"PASS"')).length;
+            const failCount = csvRows.slice(1).filter(row => row.includes('"FAIL"')).length;
+            const errorCount = csvRows.slice(1).filter(row => row.includes('"Error"')).length;
+            const totalEntries = passCount + failCount + errorCount;
+            
+            const passPercentage = totalEntries > 0 ? ((passCount / totalEntries) * 100).toFixed(1) : '0.0';
+            const failPercentage = totalEntries > 0 ? ((failCount / totalEntries) * 100).toFixed(1) : '0.0';
+            const errorPercentage = totalEntries > 0 ? ((errorCount / totalEntries) * 100).toFixed(1) : '0.0';
+
             // Also create a summary markdown file
             const summaryContent = [
               '# Fork Users Data',
               '',
               `**Total Forks:** ${allForks.length}`,
               `**Report Generated:** ${lastUpdate}`,
+              '',
+              '## Summary Statistics',
+              '',
+              '| Status | Count | Percentage |',
+              '|--------|-------|------------|',
+              `| PASS   | ${passCount}     | ${passPercentage}%       |`,
+              `| FAIL   | ${failCount}    | ${failPercentage}%      |`,
+              errorCount > 0 ? `| ERROR  | ${errorCount}     | ${errorPercentage}%       |` : null,
+              `| **Total** | **${totalEntries}** | **100%** |`,
               '',
               '## Data Files',
               '- **CSV Format**: `fork-users.csv` - Machine readable format',
@@ -115,7 +134,7 @@ jobs:
               '- **Profile Name**: User\'s display name or GitHub username',
               '- **Username**: GitHub profile link (clickable in markdown format)',
               '- **Repo Count**: Total number of public repositories',
-              '- **EthicalHackingNotes-Christ Check**: ✓ if user has this specific repo, ✗ if not',
+              '- **EthicalHackingNotes-Christ Check**: PASS if user has this specific repo, FAIL if not',
               '',
               '## Sorting Order',
               'Users are sorted chronologically by fork creation date:',
@@ -128,7 +147,7 @@ jobs:
               '',
               '## Repository Check',
               'The `EthicalHackingNotes-Christ` column helps identify users who have created or forked the specific repository of interest.'
-            ].join('\n');
+            ].filter(line => line !== null).join('\n');
 
             fs.writeFileSync('.repo/README.md', summaryContent);
 

@@ -65,7 +65,7 @@
 | Ashweljohn | [Ashweljohn](https://github.com/Ashweljohn) | 4 | PASS |
 | Tiswin-Saji | [Tiswin-Saji](https://github.com/Tiswin-Saji) | 3 | PASS |
 | BasudevDileep | [BasudevDileep](https://github.com/BasudevDileep) | 2 | PASS |
-| AthreyRaj | [AthreyRaj](https://github.com/AthreyRaj) | 13 | FAIL |
+| AthreyRaj | [AthreyRaj](https://github.com/AthreyRaj) | 14 | FAIL |
 | hackershay | [hackershay](https://github.com/hackershay) | 3 | FAIL |
 | MichelleDevasia | [MichelleDevasia](https://github.com/MichelleDevasia) | 3 | PASS |
 | Angela-Domingo | [Angela-Domingo](https://github.com/Angela-Domingo) | 2 | PASS |

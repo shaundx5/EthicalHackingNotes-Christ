@@ -1,10 +1,10 @@
-# Ethical Hacking Assignments - Semester 5, 2025 (Complete Student Mapping)
+# Ethical Hacking Assignments - Semester 3, 2025 (Complete Student Mapping)
 
 ## Assignment Instructions
 
 * **Duration**: 2 hours maximum
 * **Report**: 1-page report per assignment
-* **Repository**: Create a GitHub repository named `EH_sem5_2025_Notes`
+* **Repository**: Create a GitHub repository named `EH_sem3_2025_Notes`
 * **Directory**: Submit all assignments in the `1st Assignment` directory
 * **Deadline**: Submit by next Friday
 
@@ -551,7 +551,7 @@
 
 ## Submission Guidelines
 
-1. **Repository Setup**: Create `EH_sem5_2025_Notes` repository
+1. **Repository Setup**: Create `EH_sem3_2025_Notes` repository
 2. **Directory Structure**: Create `1st Assignment` folder
 3. **Report Format**:
 

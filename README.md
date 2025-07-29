@@ -1,4 +1,4 @@
-# Ethical Hacking Assignments - Semester 5, 2025
+# Ethical Hacking Assignments - Semester 3, 2025
 
 ## 📋 Quick Index
 **Last Updated:** 29/07/2025  
@@ -10,7 +10,7 @@
 - **Total Assignments:** 20 unique assignments
 - **Total Students:** 103 students
 - **Duration:** 2 hours maximum per assignment
-- **Report:** 1-page report per assignment
+- **Report:** 2-3page report per assignment
 - **Deadline:** Submit befor next Friday
 
 ---
@@ -72,7 +72,7 @@ Each assignment is given to multiple students across different rounds:
 ## 📝 Submission Requirements
 
 ### 📁 Repository Setup
-1. Create GitHub repository: `EH_sem5_2025_Notes`
+1. Create GitHub repository: `EH_sem3_2025_Notes`
 2. Create directory: `1st Assignment`
 3. Submit all work in this directory
 

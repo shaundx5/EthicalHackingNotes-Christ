@@ -19,7 +19,7 @@
 | Darain-Brit-A | [Darain-Brit-A](https://github.com/Darain-Brit-A) | 5 | PASS |
 | Alanjeorge2005 | [Alanjeorge2005](https://github.com/Alanjeorge2005) | 1 | FAIL |
 | SanMaria28 | [SanMaria28](https://github.com/SanMaria28) | 3 | PASS |
-| shaundx5 | [shaundx5](https://github.com/shaundx5) | 5 | PASS |
+| shaundx5 | [shaundx5](https://github.com/shaundx5) | 6 | PASS |
 | Patrick-Pio | [Patrick-Pio](https://github.com/Patrick-Pio) | 3 | PASS |
 | Deanjb3 | [Deanjb3](https://github.com/Deanjb3) | 3 | PASS |
 | ishaZaara | [ishaZaara](https://github.com/ishaZaara) | 6 | PASS |
@@ -56,7 +56,7 @@
 | Sartaj-IT | [Sartaj-IT](https://github.com/Sartaj-IT) | 3 | PASS |
 | Sankeeth-23 | [Sankeeth-23](https://github.com/Sankeeth-23) | 2 | PASS |
 | AvrelPinto | [AvrelPinto](https://github.com/AvrelPinto) | 3 | PASS |
-| vedantjoshi18 | [vedantjoshi18](https://github.com/vedantjoshi18) | 5 | PASS |
+| vedantjoshi18 | [vedantjoshi18](https://github.com/vedantjoshi18) | 6 | PASS |
 | Melwin-Thomas | [Melwin-Thomas](https://github.com/Melwin-Thomas) | 3 | PASS |
 | AlenSaijo | [AlenSaijo](https://github.com/AlenSaijo) | 4 | PASS |
 | JohnJoby2006 | [JohnJoby2006](https://github.com/JohnJoby2006) | 6 | PASS |
@@ -104,3 +104,4 @@
 | Tenzin-Choeying1 | [Tenzin-Choeying1](https://github.com/Tenzin-Choeying1) | 6 | FAIL |
 | elizamiriampaul | [elizamiriampaul](https://github.com/elizamiriampaul) | 3 | PASS |
 | lijo6666 | [lijo6666](https://github.com/lijo6666) | 3 | FAIL |
+| moonknight96 | [moonknight96](https://github.com/moonknight96) | 2 | FAIL |
